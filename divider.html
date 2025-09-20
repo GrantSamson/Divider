@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<h1>Division Setup</h1>
+
+<div class="container">
+  <!-- User input and message box. -->
+  <div id="msgBox">
+    <div id="messages">Press confirm to begin</div>
+	<input id="queryInput"></input>
+    <button id="confirm" onclick="doDivision()">Confirm</button>
+  </div>
+  <!-- Division visualization box. -->
+  <div class="workspace">
+	<!-- ROW1: Answer line (Box:0-5)-->
+    <div class="digit-row">
+      <div class="lspacer"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+	  <div class="letter">R</div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+    </div>
+    <!-- LINE1: The division line -->
+	<div class="line"></div>
+	<!-- ROW2: Diviser goes here (Box:6-11)-->
+    <div class="digit-row">
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+	  <div class="curve"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+    </div>
+	<!-- ROW3: First user input row (Box:12-15)-->
+    <div class="digit-row">
+      <div class="lspacer"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+    </div>
+    <!-- LINE2: The 1st subproduct line -->
+	<div class="line"></div>
+	<!-- ROW4: First product row (Box:16-19)-->
+    <div class="digit-row">
+      <div class="lspacer"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+    </div>
+	<!-- ROW5: First user input row (Box:20-23)-->
+    <div class="digit-row">
+      <div class="lspacer"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+    </div>
+    <!-- LINE3: The 2nd subproduct line -->
+	<div class="line"></div>
+	<!-- ROW6: First product row (Box:24-27)-->
+    <div class="digit-row">
+      <div class="lspacer"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+    </div>
+	<!-- ROW7: First user input row (Box:28-31)-->
+    <div class="digit-row">
+      <div class="lspacer"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+    </div>
+    <!-- LINE4: The 3rd subproduct line -->
+	<div class="line"></div>
+	<!-- ROW8: First product row (Box:32-35)-->
+    <div class="digit-row">
+      <div class="lspacer"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+    </div>
+	<!-- ROW9: First user input row (Box:36-39)-->
+    <div class="digit-row">
+      <div class="lspacer"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+    </div>
+    <!-- LINE5: The final subproduct line -->
+	<div class="line"></div>
+	<!-- ROW10: Final product row: the remainder (Box:40-43)-->
+    <div class="digit-row">
+      <div class="lspacer"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+      <div class="digit-box"></div>
+    </div>
+  </div>
+</div>
+
+<script src="dividerLogic.js"></script>
+
+</body>
+</html>
