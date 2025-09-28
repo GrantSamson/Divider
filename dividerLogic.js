@@ -315,13 +315,19 @@ document.addEventListener("keydown", function(event) {
 		{
 		  addMsg('All right! What is the remainder?');
 		  digitBoxes[ansBox].classList.add('remember');
+		  if(temp>9) //Highlight the 10s digit
+			  digitBoxes[ansBox-1].classList.add('remember');
 		  digitBoxes[4].classList.add('highlight');
 		  digitBoxes[5].classList.add('highlight');
 
 		  //Put the top level answer in for the 0 bypass
 		  if(zeroShortCircuit){
-		    digitBoxes[ansBox].innerHTML = temp;
-			console.log("github remainder check!");
+		    numStr = "" + temp;
+						
+			var adjSpace = ansBox - (numStr.length-1);
+			for(var i = 0; i < numStr.length; i++){
+				digitBoxes[adjSpace+i].innerHTML = numStr[i];
+			}
 		  }
 			
 		  break;
@@ -373,7 +379,6 @@ document.addEventListener("keydown", function(event) {
 		console.log(`The expected remainder value is: ${getRemainder}`);
 		
 		var temp = queryBox.value * 1;
-		console.log(`The submitted value: ${temp}`);
 		
 		if(getRemainder != temp){
 		  addMsg("No. That's not right. Try again.");
@@ -405,9 +410,9 @@ document.addEventListener("keydown", function(event) {
 		}
 		else
 		{
-		  digitBoxes[4].innerHTML = getRemainder / 10;
+		  digitBoxes[4].innerHTML = parseInt(getRemainder / 10);
 		  digitBoxes[5].innerHTML = getRemainder % 10;
-		  digitBoxes[5].classList.add('highlight');
+		  digitBoxes[5].classList.add('remember');
 		}
 	  
 	    //Final message update.
