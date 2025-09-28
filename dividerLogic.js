@@ -318,6 +318,7 @@ document.addEventListener("keydown", function(event) {
 		  //Put the top level answer in for the 0 bypass
 		  if(zeroShortCircuit){
 		    digitBoxes[ansBox].innerHTML = temp;
+			console.log("github remainder check!");
 		  }
 			
 		  break;
@@ -574,4 +575,5 @@ document.addEventListener("keydown", function(event) {
   }
 
 //doDivision();
+
 
