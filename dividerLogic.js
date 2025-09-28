@@ -304,7 +304,10 @@ document.addEventListener("keydown", function(event) {
 		//Clear messages for next prompt
 	    eraseMsg();
 	    clearQueryBox();
+
 		
+		console.log("github update check!");
+			
 		/////////////////////////////////////////////////////////////////
 		// Remainder Bypass - we're out of numbers or we're on column 3, we're at the remainder step.
 		var temp2 = numeratorString[currentCol+1];
@@ -575,5 +578,6 @@ document.addEventListener("keydown", function(event) {
   }
 
 //doDivision();
+
 
 
