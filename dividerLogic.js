@@ -306,7 +306,7 @@ document.addEventListener("keydown", function(event) {
 	    clearQueryBox();
 		
 		/////////////////////////////////////////////////////////////////
-		// Check for end of division - we move on to remainder step
+		// Remainder Bypass - we're out of numbers or we're on column 3, we're at the remainder step.
 		var temp2 = numeratorString[currentCol+1];
 		if(isNaN(parseInt(temp2)) || currentCol > 2)
 		{
@@ -314,10 +314,16 @@ document.addEventListener("keydown", function(event) {
 		  digitBoxes[ansBox].classList.add('remember');
 		  digitBoxes[4].classList.add('highlight');
 		  digitBoxes[5].classList.add('highlight');
+
+		  //Put the top level answer in for the 0 bypass
+		  if(zeroShortCircuit){
+		    digitBoxes[ansBox].innerHTML = temp;
+		  }
+			
 		  break;
 		}
-		
-		//If we have more digits of the denominator to do, move to the next column row, carry down any remaining digit
+		///////////////////////////////////////////////////////////////////
+		// If we have more digits of the denominator to do, move to the next column row, carry down any remaining digit
 		currentCol += 1;
 		ansBox += 1;
 		unHighlightColumn(currentCol);
@@ -568,3 +574,4 @@ document.addEventListener("keydown", function(event) {
   }
 
 //doDivision();
+
